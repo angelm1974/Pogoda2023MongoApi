@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 //dodajemy konfiguracja mongodb
-
+builder.Services.AddCors();
 
 // Add services to the container.
 builder.Services.AddSingleton<DanePogodoweRepozytorium>();
@@ -26,5 +26,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(builder=>builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 app.Run();
