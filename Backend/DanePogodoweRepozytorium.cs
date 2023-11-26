@@ -20,6 +20,10 @@ public class DanePogodoweRepozytorium
         return _danePogodowe.Find(danePogodowe => true).ToList();
     }
 
+    public List<DanePogodowe> Get(string startDate, string endDate)
+    {
+        return _danePogodowe.Find(danePogodowe => true).ToList();
+    }
     //ReadOne - Pobierz jednego po _id
     // public DanePogodowe Get(string id)
     // {
